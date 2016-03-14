@@ -34,6 +34,7 @@ $(function() {
             var latlongs = [];
             for (var i = 0; i < numFiles; ++i) {
                 console.log("pic " + i);
+                var firstSet = false;
                 EXIF.getData(e.target.files[i], function() {
                     var lat = EXIF.getTag(this, "GPSLatitude");
                     var latRef = EXIF.getTag(this, "GPSLatitudeRef");
@@ -44,7 +45,11 @@ $(function() {
                         latlongs[i] = "(" + lat + "," + lng + ")";
                         console.log("pic at (" + lat + ", " + lng + ")");
                         mapHandler.addMarker(latLng, "pic");
-                        mapHandler.setMapOnAll();
+                        
+                        if (!firstSet) {
+                            mapHandler.panTo(latLng);
+                            firstSet = true;
+                        }
                     } else {
                         console.log("pic loc was unavailable");
                     }
@@ -81,11 +86,16 @@ $(function() {
             }
         }
 
+        var panTo = function(latLng) {
+            map.panTo(latLng);
+        }
+
         initMap();
 
         return {
             addMarker: addMarker,
             setMapOnAll: setMapOnAll,
+            panTo:panTo,
         }
     })();
 

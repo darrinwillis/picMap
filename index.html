@@ -44,17 +44,31 @@
     </nav>
 
 
-    <div class="container">
-      <div id="mapContainer">
-        <div id="map"></div>
-      </div>
-      <!-- Example row of columns -->
-      <div class="row">
-        <div class="col-md-4">
-          <h2>Heading</h2>
-            <form id="form" action="javascript:void(0)">
-              <p>Choose file: <input id='uploadInput' type="file" multiple></p>
-            <form>
+    <div class="container-page">
+      <div style="display:table; position:relative; height:100%; width:100%">
+        <div style="display:table-row">
+
+          <div class="content-col">
+            <div style="position:relative; height:100%; width:100%">
+              <div id="map-container">
+                <div class="map-actual-container">
+                  <div id="map"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="sidebar-col">
+            <div style="position:relative; height:100%; width:100%">
+              <div style="position:absolute; top:0; bottom:0; left:0; right:0; overflow-y:auto">
+                <h2>Heading</h2>
+                  <form id="form" action="javascript:void(0)">
+                    <p>Choose file: <input id='uploadInput' type="file" multiple></p>
+                  <form>
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
 

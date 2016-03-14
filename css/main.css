@@ -8,13 +8,40 @@ html, body {
     height: 100%;
 }
 
-.container {
+.container-page {
     height: 100%;
     width: 100%;
+    padding-right: 0px;
+    padding-left: 0px;
 }
 
-#mapContainer {
+.content-col {
     height: 100%;
+    display: table-cell;
+}
+
+.sidebar-col {
+    height: 100%;
+    width: 300px;
+    display: table-cell;
+}
+
+.map-actual-container {
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+
+#map-container {
+    display: table-cell;
+    height: 100%;
+    position:absolute;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    overflow-y: auto;
+
 }
 
 #map {
